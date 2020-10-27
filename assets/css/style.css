@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;600&display=swap');
+
+
+#Page{
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+*, :after, :before{
+    box-sizing:border-box;
+}
+.py-20 {
+    padding-top: 20px!important;
+    padding-bottom: 20px!important;
+}
+.h-100{
+    height: 100% !important;
+}
+
+.mainContent--flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.m-w-210 {
+    max-width: 210px;
+}
+/* Navbar */
+.navbar {
+    width: 100%;
+}
+.font-s-bold {
+    font-family: SourceSansProBold;
+}
+.font-s-light {
+    font-family: SourceSansProLight;
+}
+.font-14 {
+    font-size: 14px!important;
+}
+.font-s-light {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.text-dark-gray {
+    color: #2e3131!important;
+}
+
+
+.text-uppercase {
+    text-transform: uppercase!important;
+}
+.mr-5 {
+    margin-right: 5px!important;
+} 
+.red {
+    color: red !important;
+}
