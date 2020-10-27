@@ -1,0 +1,14 @@
+<svg id="birbank" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="20" viewBox="0 0 10 20">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_50" data-name="Path 50" d="M10,0,0,7.626l10,7.626Z"/>
+    </clipPath>
+  </defs>
+  <g id="Group_19" data-name="Group 19">
+    <path id="Path_49" data-name="Path 49" d="M10,0,0,7.626l10,7.626Z" fill="#fff"/>
+    <g id="Group_18" data-name="Group 18" clip-path="url(#clip-path)">
+      <rect id="Rectangle_133" data-name="Rectangle 133" width="10" height="15.252" fill="#fff"/>
+    </g>
+  </g>
+  <path id="Path_51" data-name="Path 51" d="M28.6,81.2h0v9.5l6.227-4.749Z" transform="translate(-24.827 -70.695)" fill="#fff"/>
+</svg>
