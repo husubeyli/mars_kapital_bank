@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/slick.css"/>
+    <!-- Add the new slick-theme.css if you want the default styling -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/slick-theme.css"/>
+				
     <!-- FontaweSome -->
     <link
       rel="stylesheet"
@@ -17,7 +22,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="header py-4">
+    <header class="header header-none py-4">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
           <div class="brand">
@@ -49,11 +54,11 @@
           </ul>
           <ul class="d-md-flex d-lg-none">
             <li>
-              <button class="btn btn-custom-primary btn-sm btn-rounded mr-2">
+              <button class="btn btn-custom-primary btn-sm btn-rounded mr-2 shadow-none">
                 <img src="./assets/images/birbank.svg" alt="" />
               </button>
-              <button class="btn btn-custom-primary btn-sm btn-rounded">
-                <i class="fa fa-bars"></i>
+              <button class="btn btn-custom-primary btn-sm btn-rounded shadow-none btn-burger">
+                <i class="fa fa-bars outline-none"></i>
               </button>
             </li>
           </ul>
@@ -61,64 +66,216 @@
       </div>
     </header>
     <!-- Navbar -->
-    <nav class="navigation d-none d-lg-block">
+    <nav class="navigation d-none d-lg-block position-relative">
+      <div class="w-100 h-2 bg-light-gray"></div>
       <div class="container">
         <div class="d-flex justify-content-between">
           <ul class="navigation-nav">
-            <li><a href="#">Kartlar</a></li>
-            <li><a href="#">Kreditlər</a></li>
-            <li><a href="#">Depozitlər</a></li>
-            <li><a href="#">Pul Köçürmələri</a></li>
-            <li><a href="#">Fərdi Bankçılıq</a></li>
-            <li><a href="#">Onlayn Xidmətlər</a></li>
-            <li><a href="#">Onlayn Növbə</a></li>
+            <li class="dropdown pr-30">
+              <a class="font-s-w-4 text-decoration-none hover-text-dec-none py-20" href="#">Kartlar</a>
+              <ul class="dropdown-content">
+                <div class="container">
+                  <div class="block">
+                    <div class="Block">
+                      <ul class="list-unstyled p-0"> 
+                        <li class="list pb-15"> 
+                          <a href="https://kapitalbank.az/cards#simpleCards" title="Sadə kartlar" class="text-dark-gray font-s font-14 underline-none d-block text-red-hover chable">Sadə kartlar</a> 
+                        </li> 
+                        <li class="list pb-15"> 
+                          <a href="https://kapitalbank.az/cards#premiumCards" title="Premium kartlar" class="text-dark-gray font-s font-14 underline-none d-block text-red-hover chable">Premium kartlar</a> 
+                        </li> 
+                        <li class="list pb-15"> 
+                          <a href="https://kapitalbank.az/cards#TaksitCards" title="Taksit kartlar" class="text-dark-gray font-s font-14 underline-none d-block text-red-hover chable">Taksit kartlar</a> 
+                        </li> 
+                        <li class="list pb-15"> 
+                          <a href="https://kapitalbank.az/cards#GiftCards" title="Hədiyyə kartları" class="text-dark-gray font-s font-14 underline-none d-block text-red-hover chable">Hədiyyə kartları</a> 
+                        </li> 
+                      </ul> 
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li class="pr-30"><a class="py-20 font-s-w-4 text-decoration-none hover-text-dec-none" href="#">Kreditlər</a></li>
+            <li class="pr-30"><a class="py-20 font-s-w-4 text-decoration-none hover-text-dec-none" href="#">Depozitlər</a></li>
+            <li class="pr-30"><a class="py-20 font-s-w-4 text-decoration-none hover-text-dec-none" href="#">Pul Köçürmələri</a></li>
+            <li class="pr-30"><a class="py-20 font-s-w-4 text-decoration-none hover-text-dec-none" href="#">Fərdi Bankçılıq</a></li>
+            <li class="pr-30"><a class="py-20 font-s-w-4 text-decoration-none hover-text-dec-none" href="#">Onlayn Xidmətlər</a></li>
+            <li><a class="py-20 font-s-w-4 text-decoration-none hover-text-dec-none" href="#">Onlayn Növbə</a></li>
           </ul>
           <ul class="d-flex align-items-center">
-            <li>
-              <button class="btn btn-custom-outline-primary btn-sm btn-rounded">
+            <li class="search-bar">
+              <button class="btn btn-custom-outline-primary btn-sm btn-rounded shadow-none hover-original-color">
                 <i class="fas fa-search"></i>
               </button>
+              <input class=" outline-none btn-outline-color-original-rad" id="search-input" type="text"/>
             </li>
-            <li class="ml-3">
-              <button class="btn btn-custom-primary btn-sm btn-rounded d-flex">
+            <li class="ml-3 py-15">
+              <a href="#" target="_blank" class="hover-red text-decoration-none btn btn-custom-primary btn-sm btn-rounded d-flex shadow-none burger">
                 <img
                   class="mr-1"
                   src="./assets/images/birbank.svg"
                   alt=""
                 />BirBank
-              </button>
+              </a>
             </li>
           </ul>
         </div>
       </div>
+      <div class="w-100 h-2 bg-white"></div>
     </nav>
     <!-- <details>
       <summary>Elave goster <span>sdsd</span></summary>
       Elaveler .....
     </details> -->
     <!-- Menu -->
-    <div class="menu">
-      <div class="menu-header pl-3 pt-25 text-size-medium position-relative">
-        <div class="detail">
-          <details>
-            <summary class="font-s-regular pb-4">Fiziki şəxslər üçün<span><i class="fa fa-angle-down text-danger ml-3"></i></span></summary>
-            <span>Biznes üçün</span>
-          </details>
+    <div class="menu pt-25 l-0 t-0 d-lg-none">
+      <div
+        class="menu-header text-size-medium position-relative container d-flex  justify-content-between"
+      >
+        <!-- collapse section -->
+        <div class="component w-50">
+          <a
+            class="font-s-regular text-decoration-none w-50"
+            data-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            <span class="font-s-regular text-color-menu">Fiziki şəxslər üçün</span
+            ><i class="fa fa-angle-down text-danger ml-3"></i>
+          </a>
+
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body border-0 pt-0 pl-0 pb-0">
+              <a class="text-decoration-none py-15 text-color-menu" href="#">Biznes üçün</a>
+            </div>
+          </div>
         </div>
-        <button class="btn-custom-primary btn-sm btn-rounded menu-close-btn"><i class="fa fa-times"></i></button>
+
+        <!-- close button -->
+        <div class="btn-close w-50 text-right">
+          <button
+            class="btn-custom-primary btn-sm btn-rounded shadow-none btn-burger menu-close-btn"
+          >
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
       </div>
-      <div class="search">
-        <div class="search-icon">
-          
+      <div class="search py-10 w-100">
+        <div class="search-icon position-relative text-size-medium">
+          <i class="fa fa-search"></i>
+          <input
+            class="w-100 pl-5 p-1 border-0 pt-2 pb-2 shadow-none outline-none"
+            type="text"
+            name=""
+            id=""
+            placeholder="Axtarış"
+          />
         </div>
-        <input type="text" name="" id="">
+      </div>
+      <!-- left menu -->
+      <div class="position-relative">
+        <ul class="d-flex mt-3 flex-column">
+          <li class="d-flex justify-content-between align-items-center py-10 px-15">
+            <div class="flex-fill">
+              <a href="#" class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium">Kartlar</a>
+            </div>
+            <div>
+              <a href="javascript:;"><i class="fa fa-angle-right icon-color-red pl-2"></i></a>
+            </div>
+          </li>
+
+          <li class="py-10 px-15 d-flex align-items-center justify-content-between">
+            <div class="flex-fill"> 
+              <a class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium" href="#">Kreditlər</a>
+            </div>
+            <!-- icon -->
+            <div>
+              <a href="javascript:;"><i class="fa fa-angle-right icon-color-red pl-2"></i></a>
+            </div>
+            <!-- left menu side -->
+            <!-- <div class="menu-item-side px-15 py-15 ">
+              <a href="#">kitablar</a>
+            </div> -->
+          </li>
+
+          <li class="py-10 px-15 d-flex align-items-center justify-content-between">
+            <div class="flex-fill"> 
+              <a class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium" href="#">Depozitlər</a>
+            </div>
+            <!-- icon -->
+            <div>
+              <a href="javascript:;"><i class="fa fa-angle-right icon-color-red pl-2"></i></a>
+            </div>
+          </li>
+          <li class="py-10 px-15 d-flex align-items-center justify-content-between">
+            <div class="flex-fill"> 
+              <a class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium"
+              href="#">Pul Köçürmələri</a>
+            </div>
+            <!-- icon -->
+            <div>
+              <a href="javascript:;"><i  onclick="openNav()" class="fa fa-angle-right icon-color-red pl-2"></i></a>
+            </div>
+          </li>
+          <li class="py-10 px-15">
+            <div class="flex-fill"> 
+              <a class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium" href="#">Fərdi Bankçılıq</a>
+            </div>
+          </li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium" href="#">Onlayn Xidmətlər</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium" href="#">Onlayn Növbə</a></li>
+          <li class="py-20"><div class="w-100 bg-light-gray h-1"></div></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Bank haqqında</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">İnsan resurslari</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">BirBank</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Xəbərlər</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Təklif və şikayətlər</a></li>
+          <li class="py-20"><div class="w-100 bg-light-gray h-1"></div></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Kart sifarişi</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Kredit sifarişi</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Kredit Ödənişi</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Onlayn ödənişlər</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Faq</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Tariflər</a></li>
+          <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#"><span class="text-uppercase">Atm </span>xidmətləri</a></li>
+          <li class="pt-25"></li>
+          <li class="py-10">
+            <div class="px-15">
+              <ul class="d-flex align-items-center">
+                <li><a class="text-decoration-none text-uppercase text-color-menu text-size-medium font-s-w-2" href="#">En</a></li>
+                <li class=" pl-30"></li>
+                <li><a class="text-decoration-none text-uppercase text-color-menu text-size-medium font-s-w-2" href="#">Ru</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="py-20"></li>
+        </ul>
       </div>
     </div>
 
+
+    <div class="page-content">
+      <section>
+        <div class="slick-slide-header">
+          <button type="button" class="slick-prev">Previous</button>
+          <div class="content-first"><img src="./assets/images/daxili-ipoteka1598274617.png" alt=""></div>
+          <div class="content-second"><img src="./assets/images/birkart4.png" alt=""></div>
+          <button type="button" class="slick-next">Next</button>
+        </div>
+      </section>
+    </div>
+
     <!-- jQuery -->
-    <script src="./assets/js/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- <script src="./assets/js/jquery-3.5.1.slim.min.js"></script> -->
     <script src="./assets/js/popper.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
