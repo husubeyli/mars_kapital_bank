@@ -16,8 +16,8 @@
     src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
 }
 /* Arrows */
-.slick-sd-prev,
-.slick-sd-next
+.slick-prev,
+.slick-next
 {
     font-size: 0;
     line-height: 0;
@@ -41,30 +41,30 @@
     outline: none;
     background: transparent;
 }
-.slick-sd-prev:hover,
-.slick-sd-prev:focus,
-.slick-sd-next:hover,
-.slick-sd-next:focus
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
 {
     color: transparent;
     outline: none;
     background: transparent;
 }
-.slick-sd-prev:hover:before,
-.slick-sd-prev:focus:before,
-.slick-sd-next:hover:before,
-.slick-sd-next:focus:before
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
 {
     opacity: 1;
 }
-.slick-sd-prev.slick-disabled:before,
-.slick-sd-next.slick-disabled:before
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
 {
     opacity: .25;
 }
 
-.slick-sd-prev:before,
-.slick-sd-next:before
+.slick-prev:before,
+.slick-next:before
 {
     font-family: 'slick';
     font-size: 20px;
@@ -77,38 +77,38 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.slick-sd-prev
+.slick-prev
 {
     left: -25px;
 }
-[dir='rtl'] .slick-sd-prev
+[dir='rtl'] .slick-prev
 {
     right: -25px;
     left: auto;
 }
-.slick-sd-prev:before
+.slick-prev:before
 {
     content: '←';
 }
-[dir='rtl'] .slick-sd-prev:before
+[dir='rtl'] .slick-prev:before
 {
     content: '→';
 }
 
-.slick-sd-next
+.slick-next
 {
     right: -25px;
 }
-[dir='rtl'] .slick-sd-next
+[dir='rtl'] .slick-next
 {
     right: auto;
     left: -25px;
 }
-.slick-sd-next:before
+.slick-next:before
 {
     content: '→';
 }
-[dir='rtl'] .slick-sd-next:before
+[dir='rtl'] .slick-next:before
 {
     content: '←';
 }
