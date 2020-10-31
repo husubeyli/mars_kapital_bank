@@ -1,6 +1,7 @@
 "use strict";
 
 $(document).ready(function () {
+  // <firstSlider>
   $('.slick-slide-header').slick({
     dots: false,
     infinite: true,
@@ -28,16 +29,17 @@ $(document).ready(function () {
     cssEase: 'linear',
     prevArrow: false,
     nextArrow: '<div class="slick-news-next slick-news-2"></div>'
-  }); // ION RANGE
+  }); // <ionRange>
 
   var $moneyRange = $("#money_range");
   $moneyRange.ionRangeSlider({
     hide_min_max: true,
     hide_from: true,
     skin: "big",
-    min: 0,
+    min: 300,
     max: 20000,
-    from: 5000
+    step: 100,
+    from: 10000
   });
   var $monthRange = $("#month_range");
   $monthRange.ionRangeSlider({
@@ -58,21 +60,9 @@ $(document).ready(function () {
     monthRangeVal = $("#month_range").val();
     $('#current_loan_amount').text(moneyRangeVal);
     $('#current_month_amount').text(monthRangeVal);
-    var result = moneyRangeVal / monthRangeVal + 3.6;
+    var result = moneyRangeVal / monthRangeVal + 3.38;
     $('#monthly_payment').text(result.toFixed(2));
-  }); // $moneyRange.on("change", function () {
-  //     var $inp = $(this);
-  //     var from = $inp.prop("value"); // reading input value
-  //     var from2 = $inp.data("from"); // reading input data-from attribute
-  //     console.log(from, from2); // FROM value
-  // });
-  // $monthRange.on("change", function () {
-  //     var $inp = $(this);
-  //     var from = $inp.prop("value"); // reading input value
-  //     var from2 = $inp.data("from"); // reading input data-from attribute
-  //     console.log(from, from2); // FROM value
-  // });
-  // slide-section-sd
+  }); // </ionRange>
 
   $('.menu-dropdown  .menu-dropdown-arrow').on('click', function () {
     $('#menu-list').addClass('active');
