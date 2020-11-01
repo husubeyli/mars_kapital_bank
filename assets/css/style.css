@@ -87,7 +87,7 @@ ul {
 .navigation-nav .dropdown-nav:hover .dropdown-content-nav {
   display: block;
 }
-.search-bar {
+.search-bar, .selector__opener {
   position: relative;
 }
 .search-bar button {
@@ -412,6 +412,10 @@ box-shadow: none !important;
 .border-radius-8{
   border-radius: 8px;
 }
+#selector-btn-icon::after {
+  border: none !important;
+  
+}
 
 /* footer section */
 
@@ -448,6 +452,21 @@ input[type=number] {
 
 
 /* Helpers */
+.selector__arrows--up {
+  display:block!important
+}
+.c-point {
+  cursor:pointer
+}
+.mr-5 {
+  margin-right: 5px !important;
+}
+.position-right-0 {
+  right: 0;
+}
+.position-top-0 {
+  top: 0;
+}
 .gap_mY.AppButton {
   min-width:200px;
   height:56px
