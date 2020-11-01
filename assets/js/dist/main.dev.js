@@ -28,7 +28,30 @@ $(document).ready(function () {
     slidesToScroll: 3,
     cssEase: 'linear',
     prevArrow: false,
-    nextArrow: '<div class="slick-news-next slick-news-2"></div>'
+    nextArrow: '<div class="slick-news-next slick-news-2"></div>',
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true
+      }
+    }, {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }, {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    } // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+    ]
   }); // <ionRange>
 
   var $moneyRange = $("#money_range");
