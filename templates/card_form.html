@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<form method="POST" action="" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <ul>
+    {% for field in form %}
+        <li>
+            {{ field.label }} {{ field }}
+        </li>
+    {% endfor %}
+    </ul>
+
+
+    <input type="submit" value="Submit">
+</form>
+
+
+
+
+{% endblock %}

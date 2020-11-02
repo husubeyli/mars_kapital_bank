@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../static/css/slick.css" />
+
+    <link rel="stylesheet" type="text/css" href="../static/css/slick-theme.css" />
+
+    <!-- FontaweSome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!--Plugin CSS file with desired skin-->
+    <link rel="stylesheet" href="../static/css/ion.rangeSlider.min.css">
+    <!-- CSS and Bootstrap -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/xeber.css">
+    <link rel="stylesheet" href="../static/css/xeberler.css">
+
+<title>Document</title>
+</head>
+
+<body>
+    <!-- header -->
+    {% include 'includes/header.html' %}
+    <!-- /header -->
+
+    <!-- navbar -->
+    {% include 'includes/navbar.html' %}
+    <!-- /navbar -->
+    {% from "_formhelpers.html" import render_field %}
+    {% block body %}
+    {% endblock %}
+
+    <!-- footer -->
+    {% include 'includes/footer.html' %}
+    <!-- /footer -->
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <!-- slick -->
+    <script src="{{ url_for('static', filename='js/jquery-1.11.0.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-migrate-1.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <!-- ion Range -->
+    <script src="{{ url_for('static', filename='js/ion.rangeSlider.min.js') }}"></script>
+    <!-- bootstrap js -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

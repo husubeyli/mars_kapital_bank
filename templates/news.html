@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="menu">
+        <div class="menu-header pl-3 pt-25 text-size-medium position-relative">
+            <div class="detail">
+                <details>
+                    <summary class="font-s-regular pb-4">Fiziki şəxslər üçün<span><i
+                                class="fa fa-angle-down text-danger ml-3"></i></span></summary>
+                    <span>Biznes üçün</span>
+                </details>
+            </div>
+            <button class="btn-custom-primary btn-sm btn-rounded menu-close-btn"><i class="fa fa-times"></i></button>
+        </div>
+        <div class="search">
+            <div class="search-icon">
+
+            </div>
+            <input type="text" name="" id="">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="xeber">Xəbərlər</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="row news">
+            {% for news in newses %}
+            <div class="col-xl-6 md-12 box_shadow">
+                <div class="card mb-3">
+                    <div class="news_img">
+                        <img src="{{news.news_image}}" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-body ">
+                        <h5 class="card-title">{{ news.title }}</h5>
+                        <p class="card-text">{{ news.description }}</p>
+                        <p class="card-text data"><small class="text-muted"><i class="fas fa-calendar-alt">
+                            </i>{{ news.created_date }}</small></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <div class="pagination">
+            <a href="#" class="laquo">«</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+            <a href="#">...</a>
+            <a href="#">18</a>
+            <a href="#">19</a>
+            <a href="#" class="laquo">»</a>
+        </div>
+    </div>
+    <!-- <div class="container"> -->
+
+{% endblock %}

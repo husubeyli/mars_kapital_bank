@@ -1,0 +1,818 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+  <!-- Menu burger -->
+  <div class="menu pt-25 l-0 t-0 d-lg-none">
+    <div class="menu-header text-size-medium position-relative container d-flex  justify-content-between">
+      <!-- collapse section -->
+      <div class="component w-50">
+        <a class="font-s-regular text-decoration-none w-50" data-toggle="collapse" href="#collapseExample" role="button"
+          aria-expanded="false" aria-controls="collapseExample">
+          <span class="font-s-regular text-color-menu">Fiziki şəxslər üçün</span><i
+            class="fa fa-angle-down text-danger ml-3"></i>
+        </a>
+
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body border-0 pt-0 pl-0 pb-0">
+            <a class="text-decoration-none py-15 text-color-menu" href="#">Biznes üçün</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- close button -->
+      <div class="btn-close w-50 text-right">
+        <button class="btn-custom-primary btn-sm btn-rounded shadow-none btn-burger menu-close-btn">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <div class="search py-10 w-100">
+      <div class="search-icon position-relative text-size-medium">
+        <i class="fa fa-search"></i>
+        <input class="w-100 p-1 border-0 pl-40 pt-2 pb-2 shadow-none outline-none" type="text" name="" id=""
+          placeholder="Axtarış" />
+      </div>
+    </div>
+    <!-- left menu -->
+    <div class="position-relative">
+      <ul id="menu-list" class="d-flex mt-3 flex-column">
+
+        <li class="menu-dropdown">
+          <div class="d-flex justify-content-between align-items-center py-10 px-15">
+            <div class="flex-fill">
+              <a href="#"
+                class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium">Kartlar</a>
+            </div>
+            <div class="menu-dropdown-arrow">
+              <a href="javascript:;"><i class="fa fa-angle-right icon-color-red pl-2"></i></a>
+            </div>
+          </div>
+          <div class="menu-dropdown-content px-15 py-15">
+            <div class="menu-dropdown-goback d-flex align-items-center font-s font-14 mb-15"">
+              <i class="fa fa-angle-left icon-color-red pl-2"></i>
+              <span class="pl-15 font-s-bold font-w-6 font-18 font-sourcesans line-h-15 text-dark-gray">KARTLAR</span>
+            </div>
+            <!--dropdown list -->
+            <ul class="m-0 p-0 dropdown-list">
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Sadə kartlar</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Premium kartlar</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Taksit kartları</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Hədiyyə kartları</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Digital Card</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Kartın müddətinin uzadılması</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Kartlar üzrə xidmətlər</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Təhlükəsizlik qaydaları</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">3D secure</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Kart sifarişi</a></li>
+            </ul>
+          </div>
+          <!--  -->
+        </li>
+        <li class="menu-dropdown">
+          <div class="d-flex justify-content-between align-items-center py-10 px-15">
+            <div class="flex-fill">
+              <a href="#"
+                class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium">Kreditlər</a>
+            </div>
+            <div class="menu-dropdown-arrow">
+              <a href="javascript:;"><i class="fa fa-angle-right icon-color-red pl-2"></i></a>
+            </div>
+          </div>
+          <div class="menu-dropdown-content px-15 py-15">
+            <div class="menu-dropdown-goback d-flex align-items-center font-s font-14 mb-15"">
+              <i class="fa fa-angle-left icon-color-red pl-2"></i>
+              <span class="pl-15 font-s-bold font-w-6 font-18 font-sourcesans text-uppercase line-h-15 text-dark-gray">Kreditlər</span>
+            </div>
+            <!--dropdown list -->
+            <ul class="m-0 p-0 dropdown-list">
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Gündəlik tələbat krediti</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Təminatlı manat krediti</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Əmanət təminatlı kredit</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Dövlət ipotekası</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">MİDA - İpoteka krediti</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Regionlarda sosial ipoteka</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Daxili ipoteka krediti</a></li>
+            </ul>
+          </div>
+          <!--  -->
+        </li>
+        <li class="menu-dropdown">
+          <div class="d-flex justify-content-between align-items-center py-10 px-15">
+            <div class="flex-fill">
+              <a href="#"
+                class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium">Depozitlər</a>
+            </div>
+            <div class="menu-dropdown-arrow">
+              <a href="javascript:;"><i class="fa fa-angle-right icon-color-red pl-2"></i></a>
+            </div>
+          </div>
+          <div class="menu-dropdown-content px-15 py-15">
+            <div class="menu-dropdown-goback d-flex align-items-center font-s font-14 mb-15"">
+              <i class="fa fa-angle-left icon-color-red pl-2"></i>
+              <span class="pl-15 font-s-bold font-w-6 font-18 font-sourcesans text-uppercase line-h-15 text-dark-gray">Depozitlər</span>
+            </div>
+            <!--dropdown list -->
+            <ul class="m-0 p-0 dropdown-list">
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Kapital depoziti</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Müddətsiz depozit</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Depozit seyfləri</a></li>
+            </ul>
+          </div>
+          <!--  -->
+        </li>
+        <li class="menu-dropdown">
+          <div class="d-flex justify-content-between align-items-center py-10 px-15">
+            <div class="flex-fill">
+              <a href="#"
+                class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium">Pul Köçürmələri</a>
+            </div>
+            <div class="menu-dropdown-arrow">
+              <a href="javascript:;"><i class="fa fa-angle-right icon-color-red pl-2"></i></a>
+            </div>
+          </div>
+          <div class="menu-dropdown-content px-15 py-15">
+            <div class="menu-dropdown-goback d-flex align-items-center font-s font-14 mb-15"">
+              <i class="fa fa-angle-left icon-color-red pl-2"></i>
+              <span class="pl-15 font-s-bold font-w-6 font-18 font-sourcesans line-h-15 text-dark-gray">Pul Köçürmələri</span>
+            </div>
+            <!--dropdown list -->
+            <ul class="m-0 p-0 dropdown-list">
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Xəzri</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Zolotaya Korona</a></li>
+                <li class="px-15 py-10"><a href="#" class="font-r-4 font-14 underline-none h-100 text-dark-gray w-100">Western Union</a></li>
+            </ul>
+          </div>
+          <!--  -->
+        </li>
+        <li class="py-10 px-15">
+          <div class="flex-fill">
+            <a class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium" href="#">Fərdi
+              Bankçılıq</a>
+          </div>
+        </li>
+        <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium"
+            href="#">Onlayn Xidmətlər</a></li>
+        <li class="py-10 px-15"><a class="d-block text-decoration-none text-color-menu text-uppercase text-size-medium"
+            href="#">Onlayn Növbə</a></li>
+        <li class="py-20">
+          <div class="w-100 bg-light-gray h-1"></div>
+        </li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Bank
+            haqqında</a></li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">İnsan
+            resurslari</a></li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">BirBank</a>
+        </li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Xəbərlər</a>
+        </li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Təklif və
+            şikayətlər</a></li>
+        <li class="py-20">
+          <div class="w-100 bg-light-gray h-1"></div>
+        </li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Kart
+            sifarişi</a></li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Kredit
+            sifarişi</a></li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Kredit
+            Ödənişi</a></li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Onlayn
+            ödənişlər</a></li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Faq</a></li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#">Tariflər</a>
+        </li>
+        <li class="py-10 px-15"><a
+            class="d-block text-decoration-none text-color-menu text-capitalcase text-size-medium" href="#"><span
+              class="text-uppercase">Atm </span>xidmətləri</a></li>
+        <li class="pt-25"></li>
+        <li class="py-10">
+          <div class="px-15">
+            <ul class="d-flex align-items-center">
+              <li><a class="text-decoration-none text-uppercase text-color-menu text-size-medium font-s-w-2"
+                  href="#">En</a></li>
+              <li class=" pl-30"></li>
+              <li><a class="text-decoration-none text-uppercase text-color-menu text-size-medium font-s-w-2"
+                  href="#">Ru</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="py-20"></li>
+      </ul>
+
+    </div>
+  </div>
+
+
+  <div class="page-content">
+    <section class="slick-slides">
+      <!-- slideHeaderSection -->
+      <div class="slide-first">
+        <div class="slick-slide-header position-relative">
+
+          <div>
+            <div class="container">
+
+              <div class="row slide-section">
+
+                <div class="left col-md-6 h-100 col-12 d-flex justify-content-center align-items-center">
+                  <div class="banner-content d-flex flex-column justify-content-center">
+                    <h2 class="font-48 font-sourcesans font-s-bold" style="font-weight: 600;">Alış-veriş üçün BirKart
+                      yetər </h2>
+                    <span class="font-14 text-dark-gray font-s-w-2">İndi rəsmi gəliri olan hər kəs əldə edə
+                      bilər!</span>
+                    <div class="py-20"></div>
+                    <div class="link d-none d-md-block">
+                      <a class="btn original-bg-color font-sourcesans font-s-w-2  btn-outline-color-original-rad font-24 text-white"
+                        href="#">Daha ətraflı</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="right col-md-6 h-100 col-12 d-flex justify-content-center align-items-center">
+                  <img class="w-100" src="{{ url_for('static', filename='images/birkart4.png') }}" alt="birkart4.png">
+                  
+
+                </div>
+                <!-- response olan button -->
+                <div class="link col-12 d-md-none d-block">
+                  <div class="py-20"></div>
+                  <a class="btn w-100 original-bg-color font-sourcesans font-s-w-2  btn-outline-color-original-rad font-24 text-white"
+                    href="#">Daha ətraflı</a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div>
+            <div class="container">
+
+              <div class="row slide-section">
+
+                <div class="left col-md-6 h-100 col-12 d-flex justify-content-center align-items-center">
+                  <div class="banner-content d-flex flex-column justify-content-center">
+                    <h2 class="font-48 font-sourcesans font-s-bold" style="font-weight: 600;">Alış-veriş üçün BirKart
+                      yetər </h2>
+                    <span class="font-14 text-dark-gray font-s-w-2">İndi rəsmi gəliri olan hər kəs əldə edə
+                      bilər!</span>
+                    <div class="py-20"></div>
+                    <div class="link d-none d-md-block">
+                      <a class="btn original-bg-color font-sourcesans font-s-w-2  btn-outline-color-original-rad font-24 text-white"
+                        href="#">Daha ətraflı</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="right col-md-6 h-100 col-12 d-flex justify-content-center align-items-center">
+                  <img class="w-100" src="{{ url_for('static', filename='images/birkart4.png') }}" alt="birkart4.png">
+                  
+
+                </div>
+                <!-- response olan button -->
+                <div class="link col-12 d-md-none d-block">
+                  <div class="py-20"></div>
+                  <a class="btn w-100 original-bg-color font-sourcesans font-s-w-2  btn-outline-color-original-rad font-24 text-white"
+                    href="#">Daha ətraflı</a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    <!-- slickFadeSection -->
+  <div class="slide-second  mt-3 mt-lg-0 ">
+    <div class="slick-slide-sd">
+      {% for card in cards %}
+      <div>
+        <div class="container">
+
+          <div class="row slide-section">
+            <!-- COL -->
+            <div class="left col-md-6 h-100 col-12 d-flex justify-content-center align-items-center">
+              <div class="img-card">
+                <img class="img-card border-radius-24 shadow-ex1 w-100"
+                  src="{{ card.card_image }}" alt="birkart-umico-debet1596653716.png">
+              </div>
+
+            </div>
+            <!-- COL -->
+            <div class="right col-md-6 h-100 col-12 d-flex justify-content-center align-items-center">
+
+              <div class="d-flex flex-column">
+                <div class="Block">
+                  <div class="pt-15 d-md-none d-block"></div>
+                  <h2 class=" font-36 text-dark-gray mb-0 font-s-bold">{{ card.title }}</h2>
+                  <div class="pt-15 d-md-block d-none"></div>
+                </div>
+                <div class="card-content flex-grow-1 d-flex">
+                  <div class="Block min-w-295--min-w-500  w-100 pr-20">
+                    <h3 class="font-s-bold text-dark-gray font-2 mb-0 font-24 ">{{ card.short_description }}</h3>
+                    <p class="mt-1 font-14 font-s text-dark-gray font-sourcesans mb-0 ">{{ card.description }}</p>
+                  </div>
+                  <div class="d-flex justify-content-end w--100">
+                    <div class="Block">
+                      <h3 class="font-s-bold text-dark-gray font-2 mb-0 text-uppercase">{{ card.price }} AZN</h3>
+                      <p class="font-14 font-s text-dark-gray mb-0"> {{ card.card_service }}illik xidmət haqqı</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="Block row flex-wrap align-items-center justify-content-between mt-4">
+                  <div class="col-md-8 col-12">
+                    <div class="pt-15 d-md-none d-block"></div>
+                    <!-- Button__Link -->
+                    <a href="#"
+                      class="text-decoration-none btn-custom-primary btn-rounded Dy-sh w-100 ch-bg-dark-cardinal Button Button__ZCfW d-block d-flex align-items-center justify-content-center underline-none border-radius-8 bg-light-red hover-red-bg"
+                      tabindex="0" sty>
+                      <span class="font-24 font-s-w-2 text-white">Sifariş et</span>
+                    </a>
+                    <!-- /Button__Link -->
+                    <div class="pt-15 d-md-none d-block">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <!-- LinkWithArrow -->
+                    <a href="#" title="Daha ətraflı"
+                      class="text-d-none-hover d-flex font-14 font-s-w-2 underline-none  text-cardinal text-dark-cardinal-hover "
+                      tabindex="0">
+                      <span class="w-70 original-color">Daha ətraflı</span>
+                      <!-- <span class="pl-5"></span> -->
+                      <i class="fa fa-arrow-right d-flex justify-content-center align-items-center "></i>
+                    </a>
+                    <!-- ./LinkWithArrow -->
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      {% endfor %}
+
+
+      
+
+    </div>
+  </div>
+
+  <div class="p-t-b-20">
+    <div class="py-20"></div>
+    <div class="py-20 d-md-block d-none"></div>
+  </div>
+
+    </section>
+<!-- bannerSection -->
+    <section class="banner pt-20">
+      <div class="d-flex flex-wrap row">
+        <!-- Left banner -->
+        <div class="col-md-6 col-12 col-sm-12 pl-lg-0">
+          <div class="h-100 left-banner bg-light-gray ">
+            <div class="box m-0 d-flex w-100 container" style="min-height: 300px; max-width:586px">
+              <div
+                class="position-relative py-40 h-100 d-flex flex-column justify-content-between flex-grow-1 overflow-hidden">
+                <div class="position-relative z-index-1 DBlock--item-up">
+                  <h2 class="mb-0 font-s-bold line-h-1-5 font-36 DBlock--title"> Onlayn kredit ödənişi </h2>
+                  <p class="mb-0 font-s-w-2  font-14 DBlock--desc m-w-255--min-780"> Banka gəlmədən və növbələrdə vaxt
+                    itirmədən kartınızla 4 addıma kredit borcunuzun ödənişi. </p>
+                </div>
+
+                <div class="Block">
+                  <div class="pt-15 d-md-none d-block">
+                  </div>
+                  <!-- LinkWithArrow -->
+                  <a href="#" title="Ödəniş et"
+                    class="font-14 original-color font-s-w-2 text-d-none-hover text-dark-cardinal-hover ">
+                    <span>Ödəniş et</span>
+                    <span class="pl-5"></span>
+                    <i class="fa  fa-arrow-right "></i>
+                  </a>
+                  <!-- ./LinkWithArrow -->
+                  <div class="pt-15 d-md-none d-block">
+                  </div>
+                </div>
+
+                <div class="Block DBlock--right DBlock--position top-0 h-100">
+                  <div class="w-100 d-flex DBlock--right--img-bg h-100 DBlock--img-bg align-items-end">
+                    <img class="DBlock--img" loading="lazy" alt="Onlayn kredit ödənişi"
+                      src="{{ url_for('static', filename='images/cashPayment.png') }}">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Right banner -->
+        <div class="col-12 pt-15 d-block d-md-none"></div>
+        <div class="col-md-6 col-12 col-sm-12 pl-0">
+          <div class="h-100 bg-red d-flex justify-content-start right-banner">
+            <div class="w-100 d-flex container m-0" style="min-height: 300px; max-width: 586px;">
+              <div
+                class="position-relative text-white DBlock-left py-40 d-flex flex-column justify-content-between flex-grow-1 overflow-hidden">
+                <div class="position-relative w-100  z-index-1 right-banner-title-desc">
+                  <h2 class="mb-0 font-s-bold line-h-1-5 font-36 DBlock--title"> İnsan resursları </h2>
+                  <p class="mb-0 font-s-w-2  font-14 DBlock--desc m-w-255--min-780"> Kapital Bankın peşəkarlar
+                    komandasına qoşulmaq istəyirsinizsə, Sizi müvafiq vakansiyaya müraciət etməyə dəvət edirik. Biz sizə
+                    dinamik mühitdə maraqlı və perspektivli iş təklif edirik. </p>
+                </div>
+                <div class="Block">
+                  <div class="pt-15 d-md-none d-block"></div>
+                  <!-- LinkWithArrow -->
+                  <a href="#" title="Daha ətraflı" class=" text-white font-14 font-s-w-2 underline-none ">
+                    <span>Daha ətraflı</span>
+                    <span class="pl-5"></span>
+                    <i class="fa  fa-arrow-right "></i>
+                  </a>
+                  <!-- ./LinkWithArrow -->
+                  <div class="pt-15 d-md-none d-block"></div>
+
+                </div>
+                <div class="Block DBlock--left DBlock--position h-100">
+                  <div class="w-100 d-flex ml-5 h-100 DBlock--img-bg align-items-end">
+                    <img class="DBlock--img" loading="lazy" alt="İnsan resursları"
+                      src="{{ url_for('static', filename='images/right-banner-img.png') }}">
+                      
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <div class="py-20"></div>
+    <!-- loanCalculate -->
+    <div class="container">
+      <div class="d-flex">
+        <div class="w-100 m-w-180 d-md-block d-none d-sm-none"></div>
+        <div class="h-100 w-100">
+          <!-- Heading -->
+          <div class="Block">
+            <h2 class="mb-0 text-dark-gray --line-h-45 font-w-6 font-36 font-sourcesans">Gündəlik tələbat krediti</h2>
+            <div class="pt-5"></div>
+            <p class="chable mb-0 text-dark-gray --line-h-31 font-s-w-2 font-14 ">Siz müştərilərimizə asanlıqla əldə edə biləcəyiniz nağd kredit təklif edirik.</p>
+          </div>
+          <div class="pt-20"></div>
+          <div class="row">
+
+            <div class="col-md-6 col-12">
+              <!-- LoanCalculate -->
+              <div class="LoanCalculate">
+                <div class="TazGlk TazGlk--loan--js TazGlk--css">
+                  <!-- loanMoneyRange -->
+                  <div>
+                    <div class="Block d-flex align-items-center justify-content-between">
+                      <label for="current_loan_amount" class="m-0 font-s-w-2 font-14">Məbləğ</label>
+                      <div class="d-flex align-items-center">
+                        <span id="current_loan_amount" class="text-dark-gray font-24 inputAsText m-w-85 border-0">20000</span>
+                        <span class="text-dark-gray font-24 text-uppercase">&nbsp;Azn</span>
+                      </div>
+                    </div>
+                    <!-- ionMoneyRange -->
+                    <div>
+                      <input id="money_range" type="text" class="js-range-slider" name="my_range" value="" />
+                    </div>
+                  </div>
+                  <div class="py-20"></div>
+                  <!-- loanMonthRange -->
+                  <div>
+                    <div class="Block d-flex align-items-center justify-content-between">
+                      <label for="current_month_amount" class="m-0 font-s-w-2 font-14">Müddət</label>
+                      <div class="d-flex align-items-center">
+                        <span id="current_month_amount" class="text-dark-gray font-24 inputAsText m-w-45 border-0 mr-1">6</span>
+                        <span class="text-dark-gray font-24 text-uppercase">Ay</span>
+                      </div>
+                    </div>
+                    <div>
+                      <input id="month_range" type="text" class="js-range-slider" name="my_range" value="" />
+                    </div>
+                  </div>
+                  <div class="py-20"></div>
+                </div>
+              </div>
+              <!-- </loanCalculate -->
+
+            </div>
+            
+            <div class="col-md-6 col-12 d-flex">
+              <div class="d-md-block d-none">
+                <div class="px-25"></div>
+                <div class="px-15"></div>
+              </div>
+              <!-- LoanCalculatedResult -->
+              <div class="Block w-100 m-w-300--min-780">
+                <div class="bg-white border-radius-8 Shadow-ex1 h-220 px-30 d-flex flex-column justify-content-center align-items-center">
+                  <div class="Block">
+                    <p class="m-0 text-dark-gray font-s-w-2 text-center font-14">Aylıq ödəniş</p>
+                    <div class="pt-10"></div>
+                    <p class="m-0 text-dark-gray font-s text-center font-36 line-h-35">
+                      <span id="monthly_payment">1766.18</span>
+
+                      <span>AZN</span>
+                    </p>
+                    <div class="pt-35"></div>
+                  </div>
+                  <!-- Button__Link -->
+                  <a href="#" class=" w-100 ch-bg-dark-cardinal Button Button__ZCfW d-block d-flex align-items-center justify-content-center underline-none border-radius-8 bg-light-red hover-red-bg"> 
+                    <span class="font-24 font-s-w-2 text-white font-sourcesans ">Kredit al</span> 
+                  </a>
+                  <!-- /Button__Link -->
+                </div>
+              </div>
+              <!-- LoanCalculatedResult -->
+            </div>
+
+            <div class="col-12">
+              <div class="py-15 d-md-none d-block"></div>
+              <!-- LinkWithArrow -->
+              <a href="#" title="Daha ətraflı" class="font-14 font-s-w-2 underline-none  text-cardinal text-dark-cardinal-hover "> 
+                <span>Daha ətraflı</span> 
+                <span class="pl-5"></span> 
+                <i class="fa fa-arrow-right"></i> 
+              </a>
+            </div>
+
+          </div>
+        </div>
+        <div class="w-100 m-w-180 d-md-block d-none d-sm-none"></div>
+    </div>
+    </div>
+    <!-- /loanCalculate -->
+      
+    <div class="py-20"></div>
+    <!-- newsSliders -->
+    <div class="bg-light-gray min-h-300">
+      <div class="container">
+        <div class="py-20"></div>
+        <!-- HeadingSliderSection-->
+        <div class="d-flex align-items-center justify-content-between">
+          <!-- Heading -->
+          <div class="Block">
+            <h2 class="mb-0 text-dark-gray font-s-bold font-sourcesans font-w-6 font-36">Xəbərlər</h2>
+          </div>
+          <!-- linkWithArrow -->
+          <a href="{{ url_for('news_page') }}" class="font-14 font-sourcesans font-s-w-2 text-cardinal underline-none text-dark-cardinal-hover">
+            <span>Bütün xəbərlər</span>
+            <span class="pl-5"></span>
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="pt-15"></div>
+        <!-- line -->
+        <div class="w-100 h-2 bg-white"></div>
+        <div class="py-20"></div>
+        <div class="w-100">
+        <!-- newsSlickSlider -->
+          <div class="news">
+
+              <div class="row">
+                <div class="col-md-11">
+
+                    <div class="news-slick-slider">
+
+                      <div>
+                        <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
+                          <div class="Block">
+                            <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
+                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
+                            </div>
+                            <div class="pt-5"></div>
+                            <div class="news-date-month">
+                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
+                            </div>
+                          </div>
+                          <div class="px-20"></div>
+                          <div class="flex-grow-1"> 
+                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
+                          </div>
+                        </a>
+                      </div>
+
+                      <div>
+                        <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
+                          <div class="Block">
+                            <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
+                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
+                            </div>
+                            <div class="pt-5"></div>
+                            <div class="news-date-month">
+                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
+                            </div>
+                          </div>
+                          <div class="px-20"></div>
+                          <div class="flex-grow-1"> 
+                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
+                          </div>
+                        </a>
+                      </div>
+
+                      <div>
+                        <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
+                          <div class="Block">
+                            <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
+                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
+                            </div>
+                            <div class="pt-5"></div>
+                            <div class="news-date-month">
+                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
+                            </div>
+                          </div>
+                          <div class="px-20"></div>
+                          <div class="flex-grow-1"> 
+                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
+                          </div>
+                        </a>
+                      </div>
+
+                      <div>
+                        <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
+                          <div class="Block">
+                            <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
+                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
+                            </div>
+                            <div class="pt-5"></div>
+                            <div class="news-date-month">
+                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
+                            </div>
+                          </div>
+                          <div class="px-20"></div>
+                          <div class="flex-grow-1"> 
+                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
+                          </div>
+                        </a>
+                      </div>
+
+                      <div>
+                        <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
+                          <div class="Block">
+                            <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
+                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
+                            </div>
+                            <div class="pt-5"></div>
+                            <div class="news-date-month">
+                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
+                            </div>
+                          </div>
+                          <div class="px-20"></div>
+                          <div class="flex-grow-1"> 
+                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
+                          </div>
+                        </a>
+                      </div>
+
+                    </div>
+
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /newsSlider -->
+    <div class="py-20"></div>
+
+<!-- currencyConverterSection -->
+    <div class="container">
+      <div class="d-flex">
+        <div class="w-100 m-w-180 d-md-block d-none d-sm-none"></div>
+        <div class="w-100 h-100">
+          <!-- Heading -->
+          <div class="Block">
+            <h2 class="mb-0 text-dark-gray --line-h-45 font-w-6 font-36 font-sourcesans">Valyuta kalkulyatoru</h2>
+            <div class="pt-5"></div>
+            <p class="chable mb-0 text-dark-gray --line-h-31 font-s-w-2 font-14 ">Bəzi filiallar üzrə fərqli məzənnələr təyin edilə bilər</p>
+          </div>
+          <!-- /Headeings -->
+          <div class="pt-20"></div>
+          <div class="row">
+            <div class="col-md-7 col-12">
+              <div class="py-35 d-none d-md-block"></div>
+              <!-- currencyConverterTable -->
+              <table class="table custom-table">
+                <thead></thead>
+                <tbody class="show-min-986">
+                  <tr>
+                    <td class="pt-0 border-0">
+                      <span class="text-dark-gray font-14 font-s-w-2">Valyuta</span>
+                    </td>
+                    <td class="pt-0 border-0">
+                      <span class="text-dark-gray font-14 font-s-w-2">Alış</span>
+                    </td>
+                    <td class="pt-0 border-0">
+                      <span class="text-dark-gray font-14 font-s-w-2">Satış</span>
+                    </td>
+                    <td class="pt-0 border-0"></td>
+                  </tr>
+                  <tr>
+                    <td class="pl-15 text-dark-gray font-s-w-2 font-24">USD</td>
+                    <td class=" text-dark-gray font-s-w-2 font-24">1.6978</td>
+                    <td class=" text-dark-gray font-r-4 font-24">1.7020</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="pl-15 text-dark-gray font-s-w-2 font-24">EUR</td>
+                    <td class=" text-dark-gray font-s-w-2 font-24">1.9220</td>
+                    <td class=" text-dark-gray font-r-4 font-24">2.0380</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- currencyConverterTable -->
+
+            </div>
+            <div class="col d-flex">
+              <div class="pl-10 d-md-block d-none d-sm-none"></div>
+              <div class="mt--5--web w-100">
+                <!-- currencyConverterForm -->
+                <div id="currency_converter_values_table" class="Block w-100 m-w-300--min-780">
+                  <div class="bg-light-gray border-radius-8 Shadow-ex1 pt-30 pb-5 d-flex flex-column justify-content-center">
+                    <div class="Block">
+                      <div class="px-30">
+                        <div class="position-relative">
+                          <input type="number" min="0" value="100" aria-label="currency amount" id="currency_amount" class="w-100 h-48 pr-90 pl-15 text-dark-gray font-24 font-s border-0 border-radius-8">
+                          <div class="position-absolute position-right-0 position-top-0 h-100 d-flex align-items-center custom-input mr-5">
+                            <div class="" id="currency_selector_list">
+                              <div class="form-fields position-relative">
+                                <div class="selector-expanded">
+                                  <input class="selector__value" name="currency" type="hidden" data-value="" value="1">
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- CurrencyConverterForm -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+<!-- position Message box -->
+  <!-- <div id="message_box_id" class="message_box" >
+    <div class="box_close_div  " >
+        <img id="box_close" onclick="MySecondFunction()" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMS4zMTQiIGhlaWdodD0iMTEuMzE0IiB2aWV3Qm94PSIwIDAgMTEuMzE0IDExLjMxNCI+DQogIDxnIGlkPSJHcm91cF8xMSIgZGF0YS1uYW1lPSJHcm91cCAxMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNS42NTcgLTUuNDY4KSByb3RhdGUoNDUpIj4NCiAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzkiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDkiIHdpZHRoPSIyIiBoZWlnaHQ9IjE0IiByeD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNi44NjYgMC44NjYpIiBmaWxsPSIjOWI5YjliIi8+DQogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV85X0NvcHkiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDkgQ29weSIgd2lkdGg9IjIiIGhlaWdodD0iMTQiIHJ4PSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNC44NjYgNi44NjYpIHJvdGF0ZSg5MCkiIGZpbGw9IiM5YjliOWIiLz4NCiAgPC9nPg0KPC9zdmc+DQo=" alt="">
+    </div>
+    <div class="container" >
+      <div class="message_start d-flex"  >
+            <img   src="../static/footer_logo/message_box.jpeg"style width="60px", height="60px" alt="">
+            <div class="start1" >
+                <h3>Onlayn Çata xoş gəlmişsiniz!</h3>
+                <p>Çata qoşulmaq üçün müvafiq məlumatı qeyd etməyiniz xahiş olunur.</p>
+            </div>
+
+      </div>  
+      <div class="input_message" >
+            <div class="input_message_div d-flex justify-content-center " >
+                <label class="message_label" for ="phone">
+                    <input id="phone_number" name="phone" type="tel" placeholder ="+994  (__) ___ -__ -__"  >
+            </div>
+            <div class="input_email_div d-flex justify-content-center " >
+                    <label class="email_label" for ="email">
+                    <input id="email_input" name="email" type="email" placeholder ="Email"  >
+            </div>
+            <div class="input_name_div d-flex justify-content-center " >
+                <label class="name_label" for ="name">
+                <input id="name_input" name="name" type="text" placeholder ="Adınız"  >
+            </div>
+        </div>  
+        <div class="chat_start d-flex justify-content-center " >
+            <button type="button">Çata başlamaq</button>
+        </div>    
+      </div>
+</div> -->
+<!-- /messageBox -->
+
+
