@@ -1,5 +1,9 @@
 {% extends 'layout.html' %}
 
+{% block title %}
+    <title>Xəbərlər</title>
+{% endblock %}
+
 {% block body %}
     <div class="menu">
         <div class="menu-header pl-3 pt-25 text-size-medium position-relative">
@@ -28,21 +32,27 @@
     </div>
     <div class="container ">
         <div class="row news">
-            {% for news in newses %}
-            <div class="col-xl-6 md-12 box_shadow">
-                <div class="card mb-3">
-                    <div class="news_img">
-                        <img src="{{news.news_image}}" class="card-img-top" alt="...">
+            <div class="container ">
+                <div class="row news">
+                    {% for news in newses %}
+                    <div class="col-xl-6 md-12 box_shadow">
+                        <div class="card mb-3">
+                            <div class="news_img">
+                                <img src="{{news.news_image}}" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <div class="news-content">
+                                    <h5 class="card-title">{{ news.title }}</h5>
+                                    <p class="card-text">{{ news.description }}</p>
+                                    <p class="card-text data"><small class="text-muted"><i class="fas fa-calendar-alt">
+                                    </i>{{ news.created_date }}</small></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body ">
-                        <h5 class="card-title">{{ news.title }}</h5>
-                        <p class="card-text">{{ news.description }}</p>
-                        <p class="card-text data"><small class="text-muted"><i class="fas fa-calendar-alt">
-                            </i>{{ news.created_date }}</small></p>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
     <div class="container d-flex justify-content-center">

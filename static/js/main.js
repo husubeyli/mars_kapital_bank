@@ -112,6 +112,15 @@ $(document).ready(function(){
     })
 
 
+    // converter dropdown
+
+    $('.selector-expanded').on('click', function(e){
+        e.preventDefault()
+        $('.selector__arrows > .selector_arrows-up').toggleClass('d-block')
+        $('.selector__opener').toggleClass('active')
+        $('.select-list').toggleClass('d-block')
+    })
+
 
 });
 

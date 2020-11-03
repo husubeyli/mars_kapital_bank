@@ -5,14 +5,14 @@ from card_form import CardForm, NewsForm
 from utils import save_file
 
 
-
+# home page 
 @app.route('/')
 def home_page():
     cards = Card.query.all()
+    news = News.query.all()
+    return render_template('index.html', cards=cards, newses=news)
 
-    return render_template('index.html', cards=cards)
-
-
+# news page
 @app.route('/home/news')
 def news_page():
 
@@ -21,6 +21,8 @@ def news_page():
     news = News.query.all()
     return render_template('news.html', newses=news)
 
+
+#  Add new news
 @app.route('/home/news-add', methods=['GET', 'POST'])
 def news_form():
     form = NewsForm()
@@ -36,7 +38,7 @@ def news_form():
     return render_template('card_form.html', form=form)
 
 
-    
+# add cards
 @app.route('/home/card-add', methods=['GET', 'POST'])
 def card_form():
     form = CardForm()

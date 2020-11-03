@@ -1,0 +1,58 @@
+
+<div>
+<a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
+    <div class="Block">
+    <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
+        <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
+    </div>
+    <div class="pt-5"></div>
+    <div class="news-date-month">
+        <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
+    </div>
+    </div>
+    <div class="px-20"></div>
+    <div class="flex-grow-1"> 
+    <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
+    </div>
+</a>
+</div>
+
+<div>
+<a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
+    <div class="Block">
+    <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
+        <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
+    </div>
+    <div class="pt-5"></div>
+    <div class="news-date-month">
+        <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
+    </div>
+    </div>
+    <div class="px-20"></div>
+    <div class="flex-grow-1"> 
+    <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
+    </div>
+</a>
+</div>
+
+<div>
+<a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
+    <div class="Block">
+    <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
+        <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
+    </div>
+    <div class="pt-5"></div>
+    <div class="news-date-month">
+        <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
+    </div>
+    </div>
+    <div class="px-20"></div>
+    <div class="flex-grow-1"> 
+    <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
+    </div>
+</a>
+</div>
+
+
+
+

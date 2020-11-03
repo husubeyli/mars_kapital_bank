@@ -1,5 +1,8 @@
 {% extends 'layout.html' %}
 
+{% block title %}
+  <title>Kapital Bank</title>
+{% endblock %}
 
 {% block body %}
   <!-- Menu burger -->
@@ -241,7 +244,7 @@
                 </div>
 
                 <div class="right col-md-6 h-100 col-12 d-flex justify-content-center align-items-center">
-                  <img class="w-100" src="{{ url_for('static', filename='images/birkart4.png') }}" alt="birkart4.png">
+                  <img class="header-slick-img-hover w-100" src="{{ url_for('static', filename='images/birkart4.png') }}" alt="birkart4.png">
                   
 
                 </div>
@@ -590,96 +593,26 @@
                 <div class="col-md-11">
 
                     <div class="news-slick-slider">
-
+                      {% for news in newses %}
                       <div>
                         <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
                           <div class="Block">
                             <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
-                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
+                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">{{ news.created_date.strftime("%d") }}</p>
                             </div>
                             <div class="pt-5"></div>
                             <div class="news-date-month">
-                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
+                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">{{ news.created_date.strftime("%B") }}</p>
                             </div>
                           </div>
                           <div class="px-20"></div>
                           <div class="flex-grow-1"> 
-                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
+                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px">{{ news.title }}</p> 
                           </div>
                         </a>
                       </div>
+                      {% endfor %}
 
-                      <div>
-                        <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
-                          <div class="Block">
-                            <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
-                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
-                            </div>
-                            <div class="pt-5"></div>
-                            <div class="news-date-month">
-                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
-                            </div>
-                          </div>
-                          <div class="px-20"></div>
-                          <div class="flex-grow-1"> 
-                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
-                          </div>
-                        </a>
-                      </div>
-
-                      <div>
-                        <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
-                          <div class="Block">
-                            <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
-                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
-                            </div>
-                            <div class="pt-5"></div>
-                            <div class="news-date-month">
-                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
-                            </div>
-                          </div>
-                          <div class="px-20"></div>
-                          <div class="flex-grow-1"> 
-                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
-                          </div>
-                        </a>
-                      </div>
-
-                      <div>
-                        <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
-                          <div class="Block">
-                            <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
-                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
-                            </div>
-                            <div class="pt-5"></div>
-                            <div class="news-date-month">
-                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
-                            </div>
-                          </div>
-                          <div class="px-20"></div>
-                          <div class="flex-grow-1"> 
-                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
-                          </div>
-                        </a>
-                      </div>
-
-                      <div>
-                        <a href="#" class="d-flex underline-none news-link-arrow"  style="width: 100%; display: inline-block;">
-                          <div class="Block">
-                            <div class="news-date-day news-link-arrow-date rounded-circle border-1 border-color-light-red w-48 h-48 d-flex align-items-center justify-content-center">
-                              <p class="m-0 font-24  fon-s-light text-dark-gray line-h-31 Hover-HazJ-Rw chable">15</p>
-                            </div>
-                            <div class="pt-5"></div>
-                            <div class="news-date-month">
-                              <p class="m-0 font-14  font-sourcesans font-r-4 text-dark-gray text-center">Oktyabr</p>
-                            </div>
-                          </div>
-                          <div class="px-20"></div>
-                          <div class="flex-grow-1"> 
-                            <p class="text-dark-gray font-14 news-link-arrow-p font-sourcesans font-r-4 chable" style="width: 215px"> Kapital Bank 2020-cu ilin üçüncü rübünün nəticələrini elan edib </p> 
-                          </div>
-                        </a>
-                      </div>
 
                     </div>
 
@@ -748,15 +681,34 @@
                 <!-- currencyConverterForm -->
                 <div id="currency_converter_values_table" class="Block w-100 m-w-300--min-780">
                   <div class="bg-light-gray border-radius-8 Shadow-ex1 pt-30 pb-5 d-flex flex-column justify-content-center">
+                    
                     <div class="Block">
                       <div class="px-30">
-                        <div class="position-relative">
+                        <div class="position-relative number-calc">
                           <input type="number" min="0" value="100" aria-label="currency amount" id="currency_amount" class="w-100 h-48 pr-90 pl-15 text-dark-gray font-24 font-s border-0 border-radius-8">
-                          <div class="position-absolute position-right-0 position-top-0 h-100 d-flex align-items-center custom-input mr-5">
-                            <div class="" id="currency_selector_list">
+                          <div class="position-absolute position-right-0 position-top-0 h-100 d-flex w-35 align-items-center custom-input mr-5">
+                          
+                            <div class="Form__field__qH Form__field__qH--Red --d-flex" id="currency_selector_list" style="width: 100% !important;">
                               <div class="form-fields position-relative">
                                 <div class="selector-expanded">
-                                  <input class="selector__value" name="currency" type="hidden" data-value="" value="1">
+                                  <!--money title -->
+                                  <div class="selector__opener px-15 d-flex justify-content-center align-items-center h-40 c-point  bg-white">
+                                    <input class="selector__value" name="currency" type="hidden" data-value="" value="1">
+                                    <span class="selected_value font-14 font-r-4 ">AZN</span>
+                                    <span class="pl-15"></span>
+                                    <div class="selector__arrows">
+                                      <span class="fa fa-angle-up selector_arrows-up d-none text-red font-24"></span> 
+                                      <span class="fa fa-angle-down selector_arrows-down text-red font-24"></span> 
+                                    </div>
+                                  </div>
+                                  <div class="list select-list position-absolute w-100 bg-white d-none">
+                                    <div class="list-converter">
+                                      <div class="list-select font-14 font-r-4" data-value="AZN"style="display: none;">AZN</div>
+                                      <div class="list-select font-14 font-r-4" data-value="USD">USD</div>
+                                      <div class="list-select font-14 font-r-4" data-value="EUR"  data-curr-value="2.0330">EUR</div>
+                                    </div>
+                                  </div>
+
                                 </div>
                               </div>
                             </div>
@@ -764,16 +716,44 @@
                           </div>
                         </div>
                       </div>
+                      <div class="pt-10"></div>
+                      <p class="text-dark-gray font-s-w-2 text-center font-14" style="margin-bottom: 4px">Satış məbləği daxil edin</p>
+                      <div class="pb-10"></div>
+                      
                     </div>
+                    <table class="table CustomTable--white-border CustomTable mb-0">
+                      <tbody class="currency_table_body">
+                        <tr class="curr_row_USD">
+                          <td class="px-0 text-dark-gray font-24 font-s pl-40">58.75</td>
+                          <td class="text-right text-dark-gray font-24 font-s-w-2 pr-40">USD</td>
+                        </tr>
+                        <tr id="curr_row_EUR">
+                          <td class="px-0 text-dark-gray font-24 font-s pl-40">49.19</td>
+                          <td class="text-right text-dark-gray font-24 font-s-w-2 pr-40">EUR</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
                 <!-- CurrencyConverterForm -->
               </div>
             </div>
+            <div class="col-12"> 
+              <div class="py-15 d-md-none d-block"></div> 
+              <!-- LinkWithArrow --> 
+              <a href="https://kapitalbank.az/currency-rates/04-11-2020" title="Daha ətraflı" class="LinkWithArrow  font-14 font-s-w-2 underline-none  text-cardinal text-dark-cardinal-hover "> 
+                <span>Daha ətraflı</span> 
+                <span class="pl-5"></span> 
+                <i class="fa  fa-arrow-right "></i> 
+              </a>
+              <!-- ./LinkWithArrow --> 
+            </div>
           </div>
         </div>
+        <div class="w-100 m-w-180 d-md-block d-none d-sm-none"></div>
 
       </div>
+      <div class="py-20"></div>
     </div>
   </div>
 

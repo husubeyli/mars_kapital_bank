@@ -46,8 +46,12 @@ ul {
 .text-d-none-hover:hover {
   text-decoration: none !important;
 }
-
-
+.header-slick-img-hover {
+  transition: width .3s;
+}
+.header-slick-img-hover:hover {
+  width: 110% !important;
+}
 .hover-red:hover {
   color: var(--tertiary);
   outline: none;
@@ -383,16 +387,65 @@ box-shadow: none !important;
 }
 /* /loanCalculate */
 
+
+
 /* convertorSection */
-.cusom-table td, .cusom-table th, .border-color-light-gray, .irs--round, .irs--handle, .TazGlk--css {
+.cusom-table td, .cusom-table th, .border-color-light-gray, .TazGlk--css {
   border: #e8ecf1;
 }
 #currency_amount {
   outline-color: orange !important;
 }
+.selector__opener{
+  height: 100%;
+  width: 100%;
+  border: 1px solid #ef3e42;
+  border-radius: 8px;
+}
+.selector__opener.active{
+  border-bottom: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.selector__arrows {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+.selector__list {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+}
+.list-converter {
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid #ef3e42;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top: none;
+}
+.list-select {
+  cursor: pointer;
+  padding-bottom: 10px;
+  padding-left: 16px;
+}
+
+/* converter table */
+
+.CustomTable td,
+.CustomTable th,
+.TazGlk--css{
+  border-color:#e8ecf1!important
+}
+.CustomTable--white-border td,
+.CustomTable--white-border th {
+  border-color:#fff!important
+}
 
 /* /covertorSection */
-
+/* converter */
 
 /* Buttons */
 .btn-custom-primary {
@@ -452,6 +505,7 @@ input[type=number] {
 
 
 /* Helpers */
+
 .selector__arrows--up {
   display:block!important
 }
@@ -510,6 +564,9 @@ input[type=number] {
 }
 .Hover-GwHlZ:hover, .Shadow-ex1 {
   box-shadow: 0 9px 24px 0 rgba(73,81,93,.26);
+}
+.Hover-GwHlZ:hover {
+  background-color: #ef3e42;
 }
 .Hover-HazJ:hover {
   color: #fff !important;
@@ -632,17 +689,21 @@ input[type=number] {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
 }
-.py-15 {
-  padding-top: 15px!important;
-  padding-bottom: 15px!important;
-}
 .py-10 {
   padding-top: 10px!important;
   padding-bottom: 10px!important;
 }
+.py-15 {
+  padding-top: 15px!important;
+  padding-bottom: 15px!important;
+}
 .py-20 {
   padding-top: 20px!important;
   padding-bottom: 20px!important;
+}
+.py-25 {
+  padding-top: 25px!important;
+  padding-bottom: 25px!important;
 }
 .py-35 {
   padding-top: 35px!important;
@@ -691,6 +752,9 @@ input[type=number] {
 .pr-30 {
   padding-right: 30px!important;
 }
+.pr-40 {
+  padding-right: 40px !important;
+}
 .pr-90 {
   padding-right: 90px;
 }
@@ -704,6 +768,12 @@ input[type=number] {
 
 .h-1 {
   height: 1px;
+}
+.h-40 {
+  height: 40px;
+}
+.h-48 {
+  height: 48px;
 }
 .h-100 {
   height: 100% !important;
@@ -732,6 +802,9 @@ input[type=number] {
 .pb-40 {
   padding-bottom: 40px !important;
 }
+.w-35 {
+  width: 35%;
+}
 .w-70 {
   width: 70%;
 }
@@ -740,9 +813,6 @@ input[type=number] {
 }
 .w-48 {
   width: 48px;
-}
-.h-48 {
-  height: 48px;
 }
 .h-2 {
   height: 2px !important;
