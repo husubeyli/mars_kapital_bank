@@ -31,6 +31,6 @@ from routes import *
 if __name__ == '__main__':
     db.init_app(app)
     app.init_app(migrate)
-    app.run(debug=True, port=5000)
+    app.run(debug=False, port=5000)
 
 

@@ -119,6 +119,46 @@ $(document).ready(function(){
         $('.selector__arrows > .selector_arrows-up').toggleClass('d-block')
         $('.selector__opener').toggleClass('active')
         $('.select-list').toggleClass('d-block')
+
+
+    })
+
+    $(".list-converter > .list-select").on('click', function(e){ // dropdonw converter change field
+            $('.selected_value').text()
+            if ($(this).attr('data-value') == 'USD'){
+                $('.selected_value').text('USD')
+                $('.curr_row_first td:nth-child(1)').text('170.00')
+                $('.curr_row_first td:nth-child(2)').text('AZN')
+
+                $('.curr_row_second td:nth-child(1)').text('200.00')
+                $('.curr_row_second td:nth-child(2)').text('EUR')
+
+                $(this).css('display', 'none')
+                $('.list-select.azn').css('display', 'block')
+                $('.list-select.eur').css('display', 'block')
+            }else if($(this).attr('data-value') == 'EUR') {
+                $('.selected_value').text('EUR')
+                $(this).css('display', 'none')
+                $('.list-select.usd').css('display', 'block')
+                $('.list-select.azn').css('display', 'block')
+                
+                $('.curr_row_first td:nth-child(1)').text('170.40')
+                $('.curr_row_first td:nth-child(2)').text('AZN')
+
+                $('.curr_row_second td:nth-child(1)').text('200.00')
+                $('.curr_row_second td:nth-child(2)').text('USD')
+            }else {
+                $('.selected_value').text('AZN')
+                $(this).css('display', 'none')
+                $('.list-select.usd').css('display', 'block')
+                $('.list-select.eur').css('display', 'block')
+
+                $('.curr_row_first td:nth-child(1)').text('170.00')
+                $('.curr_row_first td:nth-child(2)').text('USD')
+
+                $('.curr_row_second td:nth-child(1)').text('285.00')
+                $('.curr_row_second td:nth-child(2)').text('EUR')
+            }
     })
 
 

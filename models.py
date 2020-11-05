@@ -1,7 +1,34 @@
 import datetime
 import time
-from sqlalchemy import Column, Integer, String, Text, Date
+from sqlalchemy import Column, Integer, String, Text, Date, Numeric
 from extensions import db
+
+
+
+class ForeignCurrency(db.Model):
+    __tablename__ = 'ForeignCurrency'
+
+    id =  Column(Integer, primary_key=True)
+    code = Column(String(15), nullable=False)
+    nominal = Column(Integer, nullable=False)
+    name = Column(String(80), nullable=False)
+    value = Column(Numeric(5, 4), nullable=False)
+    created_date = Column(Date, default=datetime.datetime.utcnow)
+    
+
+    def __repr__(self):
+        return '<Code Valute: %r>' % self.code
+    
+    def __init__(self, code, nominal, name, value):
+        self.code = code
+        self.nominal = nominal
+        self.name = name
+        self.value = value
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
 
 
 class Card(db.Model):
@@ -43,7 +70,7 @@ class News(db.Model):
     def __repr__(self):
         return '<Card title %r>' % self.title
 
-    def __init__(self, title, news_image, description):
+    def __init__(self, title, news_image, description):  #cons
         self.title = title
         self.news_image = news_image
         self.description = description

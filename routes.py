@@ -1,16 +1,48 @@
-from flask import render_template, request, redirect, url_for
-from models import Card, News
+from flask import render_template, request, jsonify, redirect, url_for
+import requests
+import xml.etree.ElementTree as ET
+from models import Card, News, ForeignCurrency
 from main import app
 from card_form import CardForm, NewsForm
 from utils import save_file
+from extensions import db
+
+
+
+@app.route('/home/converter', methods=['GET', 'POST'])
+def set_converter():
+    url = 'https://cbar.az/currencies/04.11.2020.xml'    
+    response = requests.get(url, stream=True)
+    tree = ET.fromstring(response.content)
+    dom = tree.findall('ValType')
+
+    for attr_type in dom:
+        name = attr_type.get('Type')
+        if name == 'Xarici valyutalar':
+            valute = attr_type.findall('Valute')
+            for code in valute:
+                code_name = code.get('Code')
+                if code_name == 'USD' or code_name == 'EUR':
+                    # print(f'code name {code_name}') 
+                    nominal = code.find('Nominal').text
+                    name = code.find('Name').text
+                    course = code.find('Value').text
+                    print(f"Nominal: {nominal}. Name: {name}. Value: {course}")
+                    currency = ForeignCurrency(code_name, nominal, name, course)
+
+                    currency.save()
+    # 
+    return redirect('/')
 
 
 # home page 
 @app.route('/')
 def home_page():
     cards = Card.query.all()
-    news = News.query.all()
-    return render_template('index.html', cards=cards, newses=news)
+    newses = News.query.all()
+    currencies = ForeignCurrency.query.all()
+    return render_template('index.html', cards=cards, newses=newses, currencies=currencies)
+
 
 # news page
 @app.route('/home/news')

@@ -658,18 +658,14 @@
                     </td>
                     <td class="pt-0 border-0"></td>
                   </tr>
+                  {% for currency in currencies %}
                   <tr>
-                    <td class="pl-15 text-dark-gray font-s-w-2 font-24">USD</td>
+                    <td class="pl-15 text-dark-gray font-s-w-2 font-24">{{ currency.code }}</td>
                     <td class=" text-dark-gray font-s-w-2 font-24">1.6978</td>
-                    <td class=" text-dark-gray font-r-4 font-24">1.7020</td>
+                    <td class=" text-dark-gray font-r-4 font-24">{{currency.value}}</td>
                     <td></td>
                   </tr>
-                  <tr>
-                    <td class="pl-15 text-dark-gray font-s-w-2 font-24">EUR</td>
-                    <td class=" text-dark-gray font-s-w-2 font-24">1.9220</td>
-                    <td class=" text-dark-gray font-r-4 font-24">2.0380</td>
-                    <td></td>
-                  </tr>
+                  {% endfor %}
                 </tbody>
               </table>
               <!-- currencyConverterTable -->
@@ -701,11 +697,11 @@
                                       <span class="fa fa-angle-down selector_arrows-down text-red font-24"></span> 
                                     </div>
                                   </div>
-                                  <div class="list select-list position-absolute w-100 bg-white d-none">
+                                  <div class="  select-list position-absolute w-100 bg-white d-none">
                                     <div class="list-converter">
-                                      <div class="list-select font-14 font-r-4" data-value="AZN"style="display: none;">AZN</div>
-                                      <div class="list-select font-14 font-r-4" data-value="USD">USD</div>
-                                      <div class="list-select font-14 font-r-4" data-value="EUR"  data-curr-value="2.0330">EUR</div>
+                                      <div class="list-select font-14 azn font-r-4" data-value="AZN"style="display: none;" style="z-index: 30000;">AZN</div>
+                                      <div class="list-select font-14 usd font-r-4" data-value="USD">USD</div>
+                                      <div class="list-select font-14 eur font-r-4" data-value="EUR"  data-curr-value="2.0330">EUR</div>
                                     </div>
                                   </div>
 
@@ -723,11 +719,11 @@
                     </div>
                     <table class="table CustomTable--white-border CustomTable mb-0">
                       <tbody class="currency_table_body">
-                        <tr class="curr_row_USD">
+                        <tr class="curr_row_first">
                           <td class="px-0 text-dark-gray font-24 font-s pl-40">58.75</td>
                           <td class="text-right text-dark-gray font-24 font-s-w-2 pr-40">USD</td>
                         </tr>
-                        <tr id="curr_row_EUR">
+                        <tr class="curr_row_second">
                           <td class="px-0 text-dark-gray font-24 font-s pl-40">49.19</td>
                           <td class="text-right text-dark-gray font-24 font-s-w-2 pr-40">EUR</td>
                         </tr>

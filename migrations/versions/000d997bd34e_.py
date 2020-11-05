@@ -36,7 +36,7 @@ def downgrade():
                 existing_type=sa.String(length=80),
                 type_=mysql.TEXT(),
                 existing_nullable=False)
-op.alter_column('card', 'card_service',
+    op.alter_column('card', 'card_service',
                 existing_type=sa.Integer(),
                 type_=mysql.VARCHAR(length=50),
                 existing_nullable=False)
