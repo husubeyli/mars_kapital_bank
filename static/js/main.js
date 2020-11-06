@@ -130,43 +130,29 @@ $(document).ready(function(){
     $('.curr_row_first').find('.qiymeti').text(viewOutAmountAZN) 
 
 
-    $('#currency_deyeri').on('input', function(){
+   $('#currency_deyeri').on('input', function(){
         let usd_azn = parseFloat($('.USD').data('value')) // USD Value
         let eur_azn = parseFloat($('.EUR').data('value'))
         let currencyAmount = parseFloat($(this).val())
         let azn_to_usd = (currencyAmount / usd_azn).toFixed(2)
         let azn_to_eur = (currencyAmount / eur_azn).toFixed(2)
-        let usd_to_eur = (azn_to_eur / azn_to_usd).toFixed(2)
-        let eur_to_usd = (azn_to_usd / azn_to_eur).toFixed(2)
+
         
         if ($('.selected_value').text() == 'USD'){
-            let usdAmount = (usd_azn * currencyAmount).toFixed(2)
-            let usdEurAmount = (usd_to_eur * currencyAmount).toFixed(2)
-            $('.curr_row_first td:nth-child(1)').text(usdAmount) // usd azn amount
+            let usdAmount = usd_azn * currencyAmount
+            $('.curr_row_first').find('.qiymeti').text(usdAmount) // usd azn amount
             $('.curr_row_first td:nth-child(2)').text('AZN')
 
-            $('.curr_row_second td:nth-child(1)').text(usdEurAmount)
+            $('.curr_row_second td:nth-child(1)').text('200.00')
             $('.curr_row_second td:nth-child(2)').text('EUR')
-
-            if( ($('#currency_deyeri').val()).length == 0 ){
-                $('.curr_row_first td:nth-child(1)').text('0.00')
-                $('.curr_row_second td:nth-child(1)').text('0.00')
-            }
             
         }else if($('.selected_value').text() == 'EUR') {
-            let eurAmount = (eur_azn * currencyAmount).toFixed(2)
-            let eurUsdAmount = (eur_to_usd * currencyAmount).toFixed(2)
+            let eurAmount = eur_azn * currencyAmount
             $('.curr_row_first').find('.qiymeti').text(eurAmount)
             $('.curr_row_first td:nth-child(2)').text('AZN')
 
-            $('.curr_row_second td:nth-child(1)').text(eurUsdAmount)
+            $('.curr_row_second td:nth-child(1)').text('200.00')
             $('.curr_row_second td:nth-child(2)').text('USD')
-
-            if( ($('#currency_deyeri').val()).length == 0 ){
-                $('.curr_row_first td:nth-child(1)').text('0.00')
-                $('.curr_row_second td:nth-child(1)').text('0.00')
-            }
-            
         }else {
 
             $('.curr_row_first').find('.qiymeti').text(azn_to_usd)
@@ -174,15 +160,9 @@ $(document).ready(function(){
 
             $('.curr_row_second').find('.qiymeti').text(azn_to_eur)
             $('.curr_row_second td:nth-child(2)').text('EUR')
-
-            if( ($('#currency_deyeri').val()).length == 0 ){
-                $('.curr_row_first td:nth-child(1)').text('0.00')
-                $('.curr_row_second td:nth-child(1)').text('0.00')
-            }
-            
         }
             
-    
+      
     })
 
     $(".list-select").on('click', function(e){ // dropdonw converter change field
@@ -191,33 +171,21 @@ $(document).ready(function(){
         let currencyAmount = parseFloat($('#currency_deyeri').val())
         let azn_to_usd = (currencyAmount / usd_azn).toFixed(2)
         let azn_to_eur = (currencyAmount / eur_azn).toFixed(2)
-        let usd_to_eur = (azn_to_eur / azn_to_usd).toFixed(2)
-        let eur_to_usd = (azn_to_usd / azn_to_eur).toFixed(2)
-    
         $('.selected_value').text()
         if ($(this).attr('data-value') == 'USD'){
-            let usdAmount = (usd_azn * currencyAmount).toFixed(2)
-            let usdEurAmount = (usd_to_eur * currencyAmount).toFixed(2)
-
+            console.log('odsfdsfk');
+            let usdAmount = usd_azn * currencyAmount
             $('.selected_value').text('USD')
             $('.curr_row_first').find('.qiymeti').text(usdAmount) // usd azn amount
             $('.curr_row_first td:nth-child(2)').text('AZN')
 
-            $('.curr_row_second').find('.qiymeti').text(usdEurAmount)
+            $('.curr_row_second').find('.qiymeti').text('200.00')
             $('.curr_row_second td:nth-child(2)').text('EUR')
-            
+
             $(this).css('display', 'none')
             $('.list-select.azn, .list-select.eur').css('display', 'block')
-
-            if( ($('#currency_deyeri').val()).length == 0 ){
-                $('.curr_row_first td:nth-child(1)').text('0.00')
-                $('.curr_row_second td:nth-child(1)').text('0.00')
-            }
-            
         }else if($(this).attr('data-value') == 'EUR') {
-            let eurAmount = (eur_azn * currencyAmount).toFixed(2)
-            let eurUsdAmount = (eur_to_usd * currencyAmount).toFixed(2)
-
+            let eurAmount = eur_azn * currencyAmount
             $('.selected_value').text('EUR')
             $(this).css('display', 'none')
             $('.list-select.usd, .list-select.azn').css('display', 'block')
@@ -225,13 +193,8 @@ $(document).ready(function(){
             $('.curr_row_first').find('.qiymeti').text(eurAmount)
             $('.curr_row_first td:nth-child(2)').text('AZN')
 
-            $('.curr_row_second').find('.qiymeti').text(eurUsdAmount)
+            $('.curr_row_second').find('.qiymeti').text('200.00')
             $('.curr_row_second td:nth-child(2)').text('USD')
-            if( ($('#currency_deyeri').val()).length == 0 ){
-                $('.curr_row_first td:nth-child(1)').text('0.00')
-                $('.curr_row_second td:nth-child(1)').text('0.00')
-            }
-            
         }else {
             $('.selected_value').text('AZN')
             $(this).css('display', 'none')
@@ -242,11 +205,6 @@ $(document).ready(function(){
 
             $('.curr_row_second').find('.qiymeti').text(azn_to_eur)
             $('.curr_row_second td:nth-child(2)').text('EUR')
-            if( ($('#currency_deyeri').val()).length == 0 ){
-                $('.curr_row_first td:nth-child(1)').text('0.00')
-                $('.curr_row_second td:nth-child(1)').text('0.00')
-            }
-            
         }
         })
         
