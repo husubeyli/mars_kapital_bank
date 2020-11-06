@@ -16,6 +16,9 @@ def set_converter():
     tree = ET.fromstring(response.content)
     dom = tree.findall('ValType')
 
+    db.session.query(ForeignCurrency).delete()
+    db.session.commit()
+    
     for attr_type in dom:
         name = attr_type.get('Type')
         if name == 'Xarici valyutalar':
@@ -23,16 +26,15 @@ def set_converter():
             for code in valute:
                 code_name = code.get('Code')
                 if code_name == 'USD' or code_name == 'EUR':
-                    # print(f'code name {code_name}') 
+
                     nominal = code.find('Nominal').text
                     name = code.find('Name').text
                     course = code.find('Value').text
                     print(f"Nominal: {nominal}. Name: {name}. Value: {course}")
                     currency = ForeignCurrency(code_name, nominal, name, course)
-
                     currency.save()
-    # 
     return redirect('/')
+
 
 
 # home page 

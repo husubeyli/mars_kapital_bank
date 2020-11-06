@@ -114,53 +114,144 @@ $(document).ready(function(){
 
     // converter dropdown
 
-    $('.selector-expanded').on('click', function(e){
-        e.preventDefault()
-        $('.selector__arrows > .selector_arrows-up').toggleClass('d-block')
-        $('.selector__opener').toggleClass('active')
-        $('.select-list').toggleClass('d-block')
+    // $('.selector-expanded').on('click', function(e){
+    //     e.preventDefault()
+    //     $('.selector__arrows > .selector_arrows-up').toggleClass('d-block')
+    //     $('.selector__opener').toggleClass('active')
+    //     $('.select-list').toggleClass('d-block')
 
 
-    })
+    // })
 
-    $(".list-converter > .list-select").on('click', function(e){ // dropdonw converter change field
-            $('.selected_value').text()
-            if ($(this).attr('data-value') == 'USD'){
-                $('.selected_value').text('USD')
-                $('.curr_row_first td:nth-child(1)').text('170.00')
-                $('.curr_row_first td:nth-child(2)').text('AZN')
 
-                $('.curr_row_second td:nth-child(1)').text('200.00')
-                $('.curr_row_second td:nth-child(2)').text('EUR')
+    let usd_azn = parseFloat($('.USD').data('value')).toFixed(2) // USD Value
+    let currencyAmount = parseFloat($('#currency_deyeri').val())
+    let viewOutAmountAZN = (currencyAmount / usd_azn).toFixed(2)
+    $('.curr_row_first').find('.qiymeti').text(viewOutAmountAZN) 
 
-                $(this).css('display', 'none')
-                $('.list-select.azn').css('display', 'block')
-                $('.list-select.eur').css('display', 'block')
-            }else if($(this).attr('data-value') == 'EUR') {
-                $('.selected_value').text('EUR')
-                $(this).css('display', 'none')
-                $('.list-select.usd').css('display', 'block')
-                $('.list-select.azn').css('display', 'block')
-                
-                $('.curr_row_first td:nth-child(1)').text('170.40')
-                $('.curr_row_first td:nth-child(2)').text('AZN')
 
-                $('.curr_row_second td:nth-child(1)').text('200.00')
-                $('.curr_row_second td:nth-child(2)').text('USD')
-            }else {
-                $('.selected_value').text('AZN')
-                $(this).css('display', 'none')
-                $('.list-select.usd').css('display', 'block')
-                $('.list-select.eur').css('display', 'block')
+    $('#currency_deyeri').on('input', function(){
+        let usd_azn = parseFloat($('.USD').data('value')) // USD Value
+        let eur_azn = parseFloat($('.EUR').data('value'))
+        let currencyAmount = parseFloat($(this).val())
+        let azn_to_usd = (currencyAmount / usd_azn).toFixed(2)
+        let azn_to_eur = (currencyAmount / eur_azn).toFixed(2)
+        let usd_to_eur = (azn_to_eur / azn_to_usd).toFixed(2)
+        let eur_to_usd = (azn_to_usd / azn_to_eur).toFixed(2)
+        
+        if ($('.selected_value').text() == 'USD'){
+            let usdAmount = (usd_azn * currencyAmount).toFixed(2)
+            let usdEurAmount = (usd_to_eur * currencyAmount).toFixed(2)
+            $('.curr_row_first td:nth-child(1)').text(usdAmount) // usd azn amount
+            $('.curr_row_first td:nth-child(2)').text('AZN')
 
-                $('.curr_row_first td:nth-child(1)').text('170.00')
-                $('.curr_row_first td:nth-child(2)').text('USD')
+            $('.curr_row_second td:nth-child(1)').text(usdEurAmount)
+            $('.curr_row_second td:nth-child(2)').text('EUR')
 
-                $('.curr_row_second td:nth-child(1)').text('285.00')
-                $('.curr_row_second td:nth-child(2)').text('EUR')
+            if( ($('#currency_deyeri').val()).length == 0 ){
+                $('.curr_row_first td:nth-child(1)').text('0.00')
+                $('.curr_row_second td:nth-child(1)').text('0.00')
             }
+            
+        }else if($('.selected_value').text() == 'EUR') {
+            let eurAmount = (eur_azn * currencyAmount).toFixed(2)
+            let eurUsdAmount = (eur_to_usd * currencyAmount).toFixed(2)
+            $('.curr_row_first').find('.qiymeti').text(eurAmount)
+            $('.curr_row_first td:nth-child(2)').text('AZN')
+
+            $('.curr_row_second td:nth-child(1)').text(eurUsdAmount)
+            $('.curr_row_second td:nth-child(2)').text('USD')
+
+            if( ($('#currency_deyeri').val()).length == 0 ){
+                $('.curr_row_first td:nth-child(1)').text('0.00')
+                $('.curr_row_second td:nth-child(1)').text('0.00')
+            }
+            
+        }else {
+
+            $('.curr_row_first').find('.qiymeti').text(azn_to_usd)
+            $('.curr_row_first td:nth-child(2)').text('USD')
+
+            $('.curr_row_second').find('.qiymeti').text(azn_to_eur)
+            $('.curr_row_second td:nth-child(2)').text('EUR')
+
+            if( ($('#currency_deyeri').val()).length == 0 ){
+                $('.curr_row_first td:nth-child(1)').text('0.00')
+                $('.curr_row_second td:nth-child(1)').text('0.00')
+            }
+            
+        }
+            
+    
     })
 
+    $(".list-select").on('click', function(e){ // dropdonw converter change field
+        let usd_azn = parseFloat($('.USD').data('value')) // USD Value
+        let eur_azn = parseFloat($('.EUR').data('value'))
+        let currencyAmount = parseFloat($('#currency_deyeri').val())
+        let azn_to_usd = (currencyAmount / usd_azn).toFixed(2)
+        let azn_to_eur = (currencyAmount / eur_azn).toFixed(2)
+        let usd_to_eur = (azn_to_eur / azn_to_usd).toFixed(2)
+        let eur_to_usd = (azn_to_usd / azn_to_eur).toFixed(2)
+    
+        $('.selected_value').text()
+        if ($(this).attr('data-value') == 'USD'){
+            let usdAmount = (usd_azn * currencyAmount).toFixed(2)
+            let usdEurAmount = (usd_to_eur * currencyAmount).toFixed(2)
+
+            $('.selected_value').text('USD')
+            $('.curr_row_first').find('.qiymeti').text(usdAmount) // usd azn amount
+            $('.curr_row_first td:nth-child(2)').text('AZN')
+
+            $('.curr_row_second').find('.qiymeti').text(usdEurAmount)
+            $('.curr_row_second td:nth-child(2)').text('EUR')
+            
+            $(this).css('display', 'none')
+            $('.list-select.azn, .list-select.eur').css('display', 'block')
+
+            if( ($('#currency_deyeri').val()).length == 0 ){
+                $('.curr_row_first td:nth-child(1)').text('0.00')
+                $('.curr_row_second td:nth-child(1)').text('0.00')
+            }
+            
+        }else if($(this).attr('data-value') == 'EUR') {
+            let eurAmount = (eur_azn * currencyAmount).toFixed(2)
+            let eurUsdAmount = (eur_to_usd * currencyAmount).toFixed(2)
+
+            $('.selected_value').text('EUR')
+            $(this).css('display', 'none')
+            $('.list-select.usd, .list-select.azn').css('display', 'block')
+            
+            $('.curr_row_first').find('.qiymeti').text(eurAmount)
+            $('.curr_row_first td:nth-child(2)').text('AZN')
+
+            $('.curr_row_second').find('.qiymeti').text(eurUsdAmount)
+            $('.curr_row_second td:nth-child(2)').text('USD')
+            if( ($('#currency_deyeri').val()).length == 0 ){
+                $('.curr_row_first td:nth-child(1)').text('0.00')
+                $('.curr_row_second td:nth-child(1)').text('0.00')
+            }
+            
+        }else {
+            $('.selected_value').text('AZN')
+            $(this).css('display', 'none')
+            $('.list-select.usd, .list-select.eur').css('display', 'block')
+
+            $('.curr_row_first').find('.qiymeti').text(azn_to_usd)
+            $('.curr_row_first td:nth-child(2)').text('USD')
+
+            $('.curr_row_second').find('.qiymeti').text(azn_to_eur)
+            $('.curr_row_second td:nth-child(2)').text('EUR')
+            if( ($('#currency_deyeri').val()).length == 0 ){
+                $('.curr_row_first td:nth-child(1)').text('0.00')
+                $('.curr_row_second td:nth-child(1)').text('0.00')
+            }
+            
+        }
+        })
+        
+    // "http://127.0.0.1:5000/getpythondata",
+        
 
 });
 
@@ -206,3 +297,5 @@ function MySecondFunction() {
     document.getElementById("img_container_img").style.display = "block";
     document.getElementById("message_box_id").style.display = "none";
 }
+
+

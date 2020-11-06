@@ -385,7 +385,7 @@
     </section>
 <!-- bannerSection -->
     <section class="banner pt-20">
-      <div class="d-flex flex-wrap row">
+      <div class="d-flex flex-wrap">
         <!-- Left banner -->
         <div class="col-md-6 col-12 col-sm-12 pl-lg-0">
           <div class="h-100 left-banner bg-light-gray ">
@@ -397,7 +397,6 @@
                   <p class="mb-0 font-s-w-2  font-14 DBlock--desc m-w-255--min-780"> Banka gəlmədən və növbələrdə vaxt
                     itirmədən kartınızla 4 addıma kredit borcunuzun ödənişi. </p>
                 </div>
-
                 <div class="Block">
                   <div class="pt-15 d-md-none d-block">
                   </div>
@@ -412,22 +411,19 @@
                   <div class="pt-15 d-md-none d-block">
                   </div>
                 </div>
-
                 <div class="Block DBlock--right DBlock--position top-0 h-100">
                   <div class="w-100 d-flex DBlock--right--img-bg h-100 DBlock--img-bg align-items-end">
                     <img class="DBlock--img" loading="lazy" alt="Onlayn kredit ödənişi"
                       src="{{ url_for('static', filename='images/cashPayment.png') }}">
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
         <!-- Right banner -->
         <div class="col-12 pt-15 d-block d-md-none"></div>
-        <div class="col-md-6 col-12 col-sm-12 pl-0">
+        <div class="col-md-6 col-12 col-sm-12 pl-0 p-0">
           <div class="h-100 bg-red d-flex justify-content-start right-banner">
             <div class="w-100 d-flex container m-0" style="min-height: 300px; max-width: 586px;">
               <div
@@ -448,13 +444,11 @@
                   </a>
                   <!-- ./LinkWithArrow -->
                   <div class="pt-15 d-md-none d-block"></div>
-
                 </div>
                 <div class="Block DBlock--left DBlock--position h-100">
                   <div class="w-100 d-flex ml-5 h-100 DBlock--img-bg align-items-end">
                     <img class="DBlock--img" loading="lazy" alt="İnsan resursları"
                       src="{{ url_for('static', filename='images/right-banner-img.png') }}">
-                      
                   </div>
                 </div>
               </div>
@@ -462,8 +456,7 @@
           </div>
         </div>
       </div>
-
-    </section>
+    </section> 
     <div class="py-20"></div>
     <!-- loanCalculate -->
     <div class="container">
@@ -645,7 +638,7 @@
               <!-- currencyConverterTable -->
               <table class="table custom-table">
                 <thead></thead>
-                <tbody class="show-min-986">
+                <tbody id="" class="show-min-986">
                   <tr>
                     <td class="pt-0 border-0">
                       <span class="text-dark-gray font-14 font-s-w-2">Valyuta</span>
@@ -662,7 +655,7 @@
                   <tr>
                     <td class="pl-15 text-dark-gray font-s-w-2 font-24">{{ currency.code }}</td>
                     <td class=" text-dark-gray font-s-w-2 font-24">1.6978</td>
-                    <td class=" text-dark-gray font-r-4 font-24">{{currency.value}}</td>
+                    <td class=" {{ currency.code }} text-dark-gray font-r-4 font-24" data-code='{{ currency.code }}' data-value='{{currency.value}}'>{{currency.value}}</td>
                     <td></td>
                   </tr>
                   {% endfor %}
@@ -681,7 +674,7 @@
                     <div class="Block">
                       <div class="px-30">
                         <div class="position-relative number-calc">
-                          <input type="number" min="0" value="100" aria-label="currency amount" id="currency_amount" class="w-100 h-48 pr-90 pl-15 text-dark-gray font-24 font-s border-0 border-radius-8">
+                          <input type="number" min="0" value="100" id="currency_deyeri" class="d-block w-100 h-48 pr-90 pl-15 text-dark-gray font-24 font-s border-0 border-radius-8">
                           <div class="position-absolute position-right-0 position-top-0 h-100 d-flex w-35 align-items-center custom-input mr-5">
                           
                             <div class="Form__field__qH Form__field__qH--Red --d-flex" id="currency_selector_list" style="width: 100% !important;">
@@ -719,14 +712,16 @@
                     </div>
                     <table class="table CustomTable--white-border CustomTable mb-0">
                       <tbody class="currency_table_body">
+                        
                         <tr class="curr_row_first">
-                          <td class="px-0 text-dark-gray font-24 font-s pl-40">58.75</td>
+                          <td class="px-0 text-dark-gray font-24 font-s pl-40 qiymeti">58.75</td>
                           <td class="text-right text-dark-gray font-24 font-s-w-2 pr-40">USD</td>
                         </tr>
                         <tr class="curr_row_second">
-                          <td class="px-0 text-dark-gray font-24 font-s pl-40">49.19</td>
+                          <td class="px-0 text-dark-gray font-24 font-s pl-40 qiymeti">49.19</td>
                           <td class="text-right text-dark-gray font-24 font-s-w-2 pr-40">EUR</td>
                         </tr>
+
                       </tbody>
                     </table>
                   </div>
@@ -790,5 +785,7 @@
       </div>
 </div> -->
 <!-- /messageBox -->
+
+
 
 
