@@ -1,5 +1,4 @@
 import datetime
-import time
 from sqlalchemy import Column, Integer, String, Text, Date, Numeric
 from extensions import db
 
@@ -28,6 +27,7 @@ class ForeignCurrency(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
+
 
 
 

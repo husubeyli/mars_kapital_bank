@@ -1,12 +1,14 @@
 import os
 from flask import Flask, send_from_directory
-
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:123@127.0.0.1/KapitalBank'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SECRET_KEY'] = os.urandom(16)
+admin = Admin(app)
 
 
 BASE_DIRS = os.path.dirname(os.path.abspath(__file__))
@@ -26,11 +28,15 @@ def uploaded_file(filename):
 from extensions import *
 from models import *
 from routes import *
+from admin import *
 
+admin.add_view(CardView(Card, db.session))
+admin.add_view(ModelView(News, db.session))
+admin.add_view(ModelView(ForeignCurrency, db.session))
 
 if __name__ == '__main__':
     db.init_app(app)
     app.init_app(migrate)
-    app.run(debug=False, port=5000)
+    app.run(debug=True, port=5000)
 
 
