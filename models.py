@@ -14,7 +14,6 @@ class ForeignCurrency(db.Model):
     value = Column(Numeric(5, 4), nullable=False)
     created_date = Column(Date, default=datetime.datetime.utcnow)
     
-
     def __repr__(self):
         return '<Code Valute: %r>' % self.code
     
